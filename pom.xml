@@ -360,7 +360,26 @@
 				</dependencies>
 			</plugin>
 
-
+                <plugin>  
+                     <groupId>org.codehaus.mojo</groupId>  
+                     <artifactId>jaxb2-maven-plugin</artifactId>  
+                     <version>1.5</version>  
+                     <executions>  
+                          <execution>  
+                               <goals>  
+                                    <goal>xjc</goal>  
+                               </goals>  
+                               <phase>generate-sources</phase>  
+                          </execution>  
+                     </executions>  
+                     <configuration>  
+                          <clearOutputDir>false</clearOutputDir>  
+                          <outputDirectory>src/main/java</outputDirectory>  
+                          <schemaDirectory>src/main/webapp/schemas</schemaDirectory>  
+                          <includeSchema>**/*.xsd</includeSchema>                        
+                          <enableIntrospection>false</enableIntrospection>  
+                     </configuration>  
+                </plugin>  
 
 			<!-- Plugin to run and test through maven -->
 			<plugin>
