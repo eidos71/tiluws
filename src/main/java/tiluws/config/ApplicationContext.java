@@ -45,32 +45,32 @@ public class ApplicationContext {
 
     } 
 
-    @Bean
-    @Autowired
-    /**
-     * 
-     * @param resource
-     * @return
-     */
-   public DefaultWsdl11Definition accountDetailsService() throws IOException{
-    	DefaultWsdl11Definition accountDetailsService = new DefaultWsdl11Definition();
-    	CommonsXsdSchemaCollection schemaCollection = new CommonsXsdSchemaCollection();
-    	schemaCollection.setInline(true);
-    	org.springframework.core.io.ClassPathResource resource = 
-    			new ClassPathResource("schemas/AccountDetailsServiceOperations.xsd");
-    	//resource.createRelative;
-    	Collection<org.springframework.core.io.Resource> resourceList=
-    			new LinkedList<org.springframework.core.io.Resource>();
-    	resourceList.add(resource);
-    	schemaCollection.setXsds(resourceList.toArray(new org.springframework.core.io.ClassPathResource[resourceList.size()]  ));
-    	accountDetailsService.setSchemaCollection(schemaCollection);
-    	accountDetailsService.setPortTypeName("AccountDetailsService");
-    	accountDetailsService.setServiceName("AccountDetailsService");     	//AccountDetailsServices??
-    	accountDetailsService.setTargetNamespace("http://webservices.tilufwlow/accountservice");
-    	accountDetailsService.setLocationUri("/endpoints/");
-   
-
-    	
-	   return accountDetailsService;
-   }
+//    @Bean
+//    @Autowired
+//    /**
+//     * 
+//     * @param resource
+//     * @return
+//     */
+//   public DefaultWsdl11Definition accountDetailsService() throws IOException{
+//    	DefaultWsdl11Definition accountDetailsService = new DefaultWsdl11Definition();
+//    	CommonsXsdSchemaCollection schemaCollection = new CommonsXsdSchemaCollection();
+//    	schemaCollection.setInline(true);
+//    	org.springframework.core.io.ClassPathResource resource = 
+//    			new ClassPathResource("schemas/AccountDetailsServiceOperations.xsd");
+//    	//resource.createRelative;
+//    	Collection<org.springframework.core.io.Resource> resourceList=
+//    			new LinkedList<org.springframework.core.io.Resource>();
+//    	resourceList.add(resource);
+//    	schemaCollection.setXsds(resourceList.toArray(new org.springframework.core.io.ClassPathResource[resourceList.size()]  ));
+//    	accountDetailsService.setSchemaCollection(schemaCollection);
+//    	accountDetailsService.setPortTypeName("AccountDetailsService");
+//    	accountDetailsService.setServiceName("AccountDetailsService");     	//AccountDetailsServices??
+//    	accountDetailsService.setTargetNamespace("http://webservices.tilufwlow/accountservice");
+//    	accountDetailsService.setLocationUri("/webservices");
+//   
+//
+//    	
+//	   return accountDetailsService;
+//   }
 }

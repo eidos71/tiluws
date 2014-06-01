@@ -60,9 +60,9 @@
 				<version>1.6.3</version>
 			</dependency>
 		<dependency>
-			<groupId>org.apache.ws.commons.schema</groupId>
-			<artifactId>XmlSchema</artifactId>
-			<version>1.4.7</version>
+			<groupId>org.apache.ws.xmlschema</groupId>
+			<artifactId>xmlschema-core</artifactId>
+			<version>2.0.2</version>
 		</dependency>
         <!-- END Missing dependences for TOMCAT -->  
 		<dependency>
@@ -408,7 +408,7 @@
                      <configuration>  
                           <clearOutputDir>false</clearOutputDir>  
                           <outputDirectory>src/main/java</outputDirectory>  
-                          <schemaDirectory>src/main/webapp/schemas</schemaDirectory>  
+                          <schemaDirectory>src/main/webapp/WEB-INF/schemas</schemaDirectory>  
                           <includeSchema>**/*.xsd</includeSchema>                        
                           <enableIntrospection>false</enableIntrospection>  
                      </configuration>  
