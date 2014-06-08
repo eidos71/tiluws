@@ -6,7 +6,7 @@
 //
 
 
-package tilufwlow.webservices;
+package hotel.tilufwlow.webservices;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
@@ -14,31 +14,34 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for EnumAccountStatus.
+ * <p>Java class for EnumHotelStatus.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
- * &lt;simpleType name="EnumAccountStatus">
+ * &lt;simpleType name="EnumHotelStatus">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="Active"/>
- *     &lt;enumeration value="Inactive"/>
+ *     &lt;enumeration value="fullseason01"/>
+ *     &lt;enumeration value="summer02"/>
+ *     &lt;enumeration value="winter03"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
  * 
  */
-@XmlType(name = "EnumAccountStatus")
+@XmlType(name = "EnumHotelStatus")
 @XmlEnum
-public enum EnumAccountStatus {
+public enum EnumHotelStatus {
 
-    @XmlEnumValue("Active")
-    ACTIVE("Active"),
-    @XmlEnumValue("Inactive")
-    INACTIVE("Inactive");
+    @XmlEnumValue("fullseason01")
+    FULLSEASON_01("fullseason01"),
+    @XmlEnumValue("summer02")
+    SUMMER_02("summer02"),
+    @XmlEnumValue("winter03")
+    WINTER_03("winter03");
     private final String value;
 
-    EnumAccountStatus(String v) {
+    EnumHotelStatus(String v) {
         value = v;
     }
 
@@ -46,8 +49,8 @@ public enum EnumAccountStatus {
         return value;
     }
 
-    public static EnumAccountStatus fromValue(String v) {
-        for (EnumAccountStatus c: EnumAccountStatus.values()) {
+    public static EnumHotelStatus fromValue(String v) {
+        for (EnumHotelStatus c: EnumHotelStatus.values()) {
             if (c.value.equals(v)) {
                 return c;
             }
