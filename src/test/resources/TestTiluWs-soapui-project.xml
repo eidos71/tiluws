@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project activeEnvironment="Default" name="TestTiluWs" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="AccountServicesSoap11" type="wsdl" bindingName="{http://webservices.tilufwlow/accountservice}AccountServicesSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/tiluflow/webservices/accountService/accountService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/tiluflow/webservices/accountService/accountService.wsdl"><con:part><con:url>http://localhost:8080/tiluflow/webservices/accountService/accountService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://webservices.tilufwlow/accountservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://webservices.tilufwlow/accountservice" xmlns:sch1="http://webservices.tilufwlow" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservices.tilufwlow/accountservice">
+<con:soapui-project activeEnvironment="Default" name="accountService" resourceRoot="" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="AccountServicesSoap11" type="wsdl" bindingName="{http://webservices.tilufwlow/accountservice}AccountServicesSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/tiluws/webservices/accountService/accountService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/tiluws/webservices/accountService/accountService.wsdl"><con:part><con:url>http://localhost:8080/tiluws/webservices/accountService/accountService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://webservices.tilufwlow/accountservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://webservices.tilufwlow/accountservice" xmlns:sch1="http://webservices.tilufwlow" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservices.tilufwlow/accountservice">
   <wsdl:types>
     <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://webservices.tilufwlow/accountservice" xmlns="http://webservices.tilufwlow/accountservice" xmlns:account="http://webservices.tilufwlow" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <xsd:import namespace="http://webservices.tilufwlow"/>
@@ -62,14 +62,33 @@
   </wsdl:binding>
   <wsdl:service name="AccountServicesService">
     <wsdl:port binding="tns:AccountServicesSoap11" name="AccountServicesSoap11">
-      <soap:address location="http://localhost:8080/tiluflow/webservices/accountService/"/>
+      <soap:address location="http://localhost:8080/tiluws/webservices/accountService/"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/tiluflow/webservices/accountService/</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="AccountDetails" bindingOperationName="AccountDetails" type="Request-Response" outputName="AccountDetailsResponse" inputName="AccountDetailsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/tiluflow/webservices/accountService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://webservices.tilufwlow/accountservice">
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://eidos71-HP-ENVY-Sleekbook-4-PC:8088/mockAccountServicesSoap11</con:endpoint><con:endpoint>http://localhost:8080/tiluws/webservices/accountService/</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="AccountDetails" bindingOperationName="AccountDetails" type="Request-Response" outputName="AccountDetailsResponse" inputName="AccountDetailsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/tiluws/webservices/accountService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://webservices.tilufwlow/accountservice">
    <soapenv:Header/>
    <soapenv:Body>
       <acc:AccountDetailsRequest>
-         <acc:accountNumber>32</acc:accountNumber>
+         <acc:accountNumber>?</acc:accountNumber>
       </acc:AccountDetailsRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.tilufwlow/accountservice/AccountServices/AccountDetailsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.tilufwlow/accountservice/AccountServices/AccountDetailsRequest"/></con:call></con:operation></con:interface><con:testSuite name="AccountServicesSoap11 TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="AccountServicesSoap11 TestSuite" searchProperties="true"><con:settings/><con:testStep type="request" name="AccountDetails"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AccountServicesSoap11</con:interface><con:operation>AccountDetails</con:operation><con:request name="AccountDetails"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/tiluws/webservices/accountService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://webservices.tilufwlow/accountservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <acc:AccountDetailsRequest>
+         <acc:accountNumber>?</acc:accountNumber>
+      </acc:AccountDetailsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://webservices.tilufwlow/accountservice/AccountServices/AccountDetailsRequest"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService port="8088" path="/mockAccountServicesSoap11" host="eidos71-HP-ENVY-Sleekbook-4-PC" name="AccountServicesSoap11 MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="AccountDetails" interface="AccountServicesSoap11" operation="AccountDetails"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://webservices.tilufwlow/accountservice" xmlns:web="http://webservices.tilufwlow">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <acc:AccountDetailsResponse>
+         <acc:AccountDetails>
+            <web:AccountNumber>?</web:AccountNumber>
+            <web:AccountName>?</web:AccountName>
+            <web:AccountBalance>?</web:AccountBalance>
+            <web:AccountStatus>?</web:AccountStatus>
+         </acc:AccountDetails>
+      </acc:AccountDetailsResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.tilufwlow/accountservice/AccountServices/AccountDetailsResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
