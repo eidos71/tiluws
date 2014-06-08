@@ -6,7 +6,7 @@
 //
 
 
-package tilufwlow.webservices.accountservice;
+package tilufwlow.webservices.hotelservice;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="accountNumber" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="hotelId" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "accountNumber"
+    "hotelId"
 })
-@XmlRootElement(name = "AccountDetailsRequest")
-public class AccountDetailsRequest {
+@XmlRootElement(name = "HotelDetailsRequest")
+public class HotelDetailsRequest {
 
     @XmlElement(required = true)
-    protected String accountNumber;
+    protected String hotelId;
 
     /**
-     * Gets the value of the accountNumber property.
+     * Gets the value of the hotelId property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getHotelId() {
+        return hotelId;
     }
 
     /**
-     * Sets the value of the accountNumber property.
+     * Sets the value of the hotelId property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAccountNumber(String value) {
-        this.accountNumber = value;
+    public void setHotelId(String value) {
+        this.hotelId = value;
     }
 
 }

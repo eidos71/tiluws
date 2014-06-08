@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns="http://webservices.tilufwlow.hotel" targetNamespace="http://webservices.tilufwlow.hotel" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Hotel" type="Hotel">
+		<xs:annotation>
+			<xs:documentation>Definition of an Hotel</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="Hotel">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="address" type="address"/>
+			<xs:element name="city" type="xs:string"/>
+			<xs:element name="state" type="xs:string"/>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="price" type="xs:integer"/>
+			<xs:element name="EnumHotelStatus" type="EnumHotelStatus"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="address">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="line1" type="xs:string"/>
+			<xs:element name="line2" type="xs:string"/>
+			<xs:element name="line3" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="EnumHotelStatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="100_FULL"/>
+			<xs:enumeration value="101_SUMMER"/>
+			<xs:enumeration value="102_WINTER"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

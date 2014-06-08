@@ -30,4 +30,9 @@
 		portTypeName="AccountServices" locationUri="/webservices/accountService/">
 		<web-services:xsd location="/WEB-INF/schemas/AcountDetailServiceOperations.xsd" />
 	</web-services:dynamic-wsdl>
+	
+		<web-services:dynamic-wsdl id="hotelService"
+		portTypeName="HotelServices" locationUri="/webservices/hotelService/">
+		<web-services:xsd location="/WEB-INF/schemas/HotelDetailServiceOperations.xsd" />
+	</web-services:dynamic-wsdl>
 </beans>

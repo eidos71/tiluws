@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://webservices.tilufwlow/hotelservice" 
+xmlns:hotels="http://webservices.tilufwlow.hotel" targetNamespace="http://webservices.tilufwlow/hotelservice" elementFormDefault="qualified">
+	<xsd:import namespace="http://webservices.tilufwlow.hotel" schemaLocation="HotelDetail.xsd"/>
+	<!--      <xsd:include schemaLocation="HotelsDetail.xsd" /> -->
+	<xsd:element name="HotelDetailsRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="hotelId" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="HotelDetailsResponse">
+		<xsd:complexType>
+			<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="HotelList" type="hotels:Hotel"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

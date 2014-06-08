@@ -5,5 +5,5 @@
 // Generated on: 2014.06.08 at 02:49:05 PM CEST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://webservices.tilufwlow/accountservice", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package tilufwlow.webservices.accountservice;
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://webservices.tilufwlow.hotel", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package hotel.tilufwlow.webservices;
