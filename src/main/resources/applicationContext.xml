@@ -26,6 +26,37 @@
    
     <jpa:repositories base-package="net.petrikainulainen.spring.datajpa.repository"/>
      -->
+     <web-services:annotation-driven/>
+     <web-services:interceptors>
+<!--        <bean id="validatingInterceptor"  class="org.springframework.ws.soap.server.endpoint.interceptor.PayloadValidatingInterceptor" -->
+<!--             p:schema="/WEB-INF/subscription.xsd" -->
+<!--             p:validateRequest="true" -->
+<!--             p:validateResponse="true"/>      -->
+	<bean id="loggingInterceptor"
+		class="org.springframework.ws.server.endpoint.interceptor.PayloadLoggingInterceptor" />
+
+	<bean
+		class="org.springframework.ws.soap.security.wss4j.Wss4jSecurityInterceptor">
+		<property name="validationActions" value="Timestamp UsernameToken" />
+		<property name="securementActions" value="Timestamp UsernameToken" />
+		<property name="timestampPrecisionInMilliseconds" value="true" />
+		<property name="securementUsername" value="mojo" />
+		<property name="securementPassword" value="mojopass" />
+		<property name="securementPasswordType" value="PasswordText" />
+		<property name="securementUsernameTokenElements" value="Nonce Created" />
+		<property name="validationCallbackHandler" ref="callbackHandler" />
+	</bean>   
+    
+     </web-services:interceptors> 
+      <!-- a simple callback handler to configure users and passwords with an in-memory Properties object. -->
+ <bean id="callbackHandler" class="org.springframework.ws.soap.security.wss4j.callback.SimplePasswordValidationCallbackHandler">
+     <property name="users">
+         <props>
+             <prop key="admin">secret</prop>
+             <prop key="user">pass</prop>
+         </props>
+     </property>
+ </bean>
 	<web-services:dynamic-wsdl id="accountService"
 		portTypeName="AccountServices" locationUri="/webservices/accountService/">
 		<web-services:xsd location="/WEB-INF/schemas/AcountDetailServiceOperations.xsd" />

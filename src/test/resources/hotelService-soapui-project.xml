@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="hotelService" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="HotelServicesSoap11" type="wsdl" bindingName="{http://webservices.tilufwlow/hotelservice}HotelServicesSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/tiluws/webservices/hotelService/hotelService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/tiluws/webservices/hotelService/hotelService.wsdl"><con:part><con:url>http://localhost:8080/tiluws/webservices/hotelService/hotelService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://webservices.tilufwlow/hotelservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="http://webservices.tilufwlow/hotelservice" xmlns:sch1="http://webservices.tilufwlow.hotel" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservices.tilufwlow/hotelservice">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://webservices.tilufwlow/hotelservice" xmlns="http://webservices.tilufwlow/hotelservice" xmlns:hotels="http://webservices.tilufwlow.hotel" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://webservices.tilufwlow.hotel"/>
+      <xsd:element name="HotelDetailsRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="hotelId" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="HotelDetailsResponse">
+        <xsd:complexType>
+          <xsd:sequence maxOccurs="unbounded" minOccurs="0">
+            <xsd:element name="HotelList" type="hotels:Hotel"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://webservices.tilufwlow.hotel" xmlns="http://webservices.tilufwlow.hotel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Hotel" type="Hotel">
+        <xs:annotation>
+          <xs:documentation>Definition of an Hotel</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:complexType name="Hotel">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="address" type="address"/>
+          <xs:element name="city" type="xs:string"/>
+          <xs:element name="state" type="xs:string"/>
+          <xs:element name="id" type="xs:string"/>
+          <xs:element name="price" type="xs:integer"/>
+          <xs:element name="HotelStatus" type="EnumHotelStatus"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="address">
+        <xs:sequence>
+          <xs:element name="line1" type="xs:string"/>
+          <xs:element name="line2" type="xs:string"/>
+          <xs:element name="line3" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="EnumHotelStatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="fullseason01"/>
+          <xs:enumeration value="summer02"/>
+          <xs:enumeration value="winter03"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="HotelDetailsRequest">
+    <wsdl:part element="tns:HotelDetailsRequest" name="HotelDetailsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="HotelDetailsResponse">
+    <wsdl:part element="tns:HotelDetailsResponse" name="HotelDetailsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HotelServices">
+    <wsdl:operation name="HotelDetails">
+      <wsdl:input message="tns:HotelDetailsRequest" name="HotelDetailsRequest"></wsdl:input>
+      <wsdl:output message="tns:HotelDetailsResponse" name="HotelDetailsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HotelServicesSoap11" type="tns:HotelServices">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="HotelDetails">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="HotelDetailsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="HotelDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HotelServicesService">
+    <wsdl:port binding="tns:HotelServicesSoap11" name="HotelServicesSoap11">
+      <soap:address location="http://localhost:8080/tiluws/webservices/hotelService/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/tiluws/webservices/hotelService/</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="HotelDetails" bindingOperationName="HotelDetails" type="Request-Response" outputName="HotelDetailsResponse" inputName="HotelDetailsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/tiluws/webservices/hotelService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hot="http://webservices.tilufwlow/hotelservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hot:HotelDetailsRequest>
+         <hot:hotelId>32</hot:hotelId>
+      </hot:HotelDetailsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.tilufwlow/hotelservice/HotelServices/HotelDetailsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="HotelServicesSoap11 TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="HotelDetails TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="HotelDetails"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HotelServicesSoap11</con:interface><con:operation>HotelDetails</con:operation><con:request name="HotelDetails"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/tiluws/webservices/hotelService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hot="http://webservices.tilufwlow/hotelservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hot:HotelDetailsRequest>
+         <hot:hotelId>?</hot:hotelId>
+      </hot:HotelDetailsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://webservices.tilufwlow/hotelservice/HotelServices/HotelDetailsRequest"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
